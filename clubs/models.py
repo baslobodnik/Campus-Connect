@@ -37,6 +37,8 @@ class Organization(models.Model):
     fee = models.BooleanField()
     def was_published_today(self):
         return self.pub_date.date() == datetime.date.today()
+    def __unicode__(self):
+        return self.club_title
 
 class Question(models.Model):
     organization = models.ForeignKey(Organization)

@@ -1,4 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
+from django.conf.urls.defaults import *
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
@@ -6,7 +7,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'campusconnect.views.home', name='home'),
+    url(r'^$', 'campusconnect.clubs.views.homepage', name='home'),
+    #url(r'^clubs/$', 'campusconnect.views.organization', name='organization'),
+    #url(r'^clubs/$', 'campusconnect.views.major', name='major'),
+    #url(r'^clubs/$', 'campusconnect.views.college', name='college'),
     # url(r'^campusconnect/', include('campusconnect.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
