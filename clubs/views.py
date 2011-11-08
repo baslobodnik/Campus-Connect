@@ -7,11 +7,6 @@ def homepage(request):
     return render_to_response('homepage.html',{
         'organization':organization,
     })
-def organization(request):
-    organization = Organization.objects.order_by('organization')
-    return render_to_response('organization.html',{
-        'organization':organization,
-    })
 def major(request):
     major = Major.objects.order_by('major')
     return render_to_response('major.html',{

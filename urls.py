@@ -8,7 +8,6 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'campusconnect.clubs.views.homepage', name='home'),
-    url(r'^clubs/$', 'campusconnect.clubs.views.organization', name='organization'),
     url(r'^clubs/$', 'campusconnect.clubs.views.major', name='major'),
     url(r'^clubs/$', 'campusconnect.clubs.views.college', name='college'),
     # url(r'^campusconnect/', include('campusconnect.foo.urls')),
