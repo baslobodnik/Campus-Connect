@@ -1,7 +1,8 @@
 # Create your views here.
 
-from campusconnect.clubs.models import Organization
+from campusconnect.clubs.models import Organization, Major, College
 from django.shortcuts import render_to_response
+
 def homepage(request):
     organization = Organization.objects.order_by('club_title')
     return render_to_response('homepage.html',{

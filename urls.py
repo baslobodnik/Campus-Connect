@@ -8,8 +8,8 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'campusconnect.clubs.views.homepage', name='home'),
-    url(r'^clubs/$', 'campusconnect.clubs.views.major', name='major'),
-    url(r'^clubs/$', 'campusconnect.clubs.views.college', name='college'),
+    url(r'^major/$', 'campusconnect.clubs.views.major', name='major'),
+    url(r'^college/$', 'campusconnect.clubs.views.college', name='college'),
     # url(r'^campusconnect/', include('campusconnect.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
