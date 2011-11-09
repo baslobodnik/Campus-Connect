@@ -12,7 +12,7 @@ class College(models.Model):
     name = models.CharField(max_length=255)
     name_slug = models.SlugField()
     def get_absolute_url(self):
-        return "/college/%s/" % self.slub
+        return "/college/%s/" % self.name_slug
     def __unicode__(self):
         return self.name
 
@@ -20,7 +20,7 @@ class Major(models.Model):
     name = models.CharField(max_length=255)
     name_slug = models.SlugField()
     def get_absolute_url(self):
-        return "/major/%s/" % self.slub
+        return "/major/%s/" % self.name_slug
     def __unicode__(self):
         return self.name
 

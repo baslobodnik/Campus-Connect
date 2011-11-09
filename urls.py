@@ -9,7 +9,9 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'campusconnect.clubs.views.homepage', name='home'),
     url(r'^major/$', 'campusconnect.clubs.views.major', name='major'),
+    url(r'^major/(?P<major>[-\w]+)/$', 'campusconnect.clubs.views.major_detail', name='major_detail'),
     url(r'^college/$', 'campusconnect.clubs.views.college', name='college'),
+    url(r'^college/(?P<college>[-\w]+)/$', 'campusconnect.clubs.views.college_detail', name='college_detail'),
     # url(r'^campusconnect/', include('campusconnect.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
