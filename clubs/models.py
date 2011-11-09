@@ -3,18 +3,24 @@ from django.db import models
 class Location(models.Model):
     location_name = models.CharField(max_length=255)
     address = models.CharField(max_length=255)
+    def get_absolute_url(self):
+        return "/club/%i/" % self.id
     def __unicode__(self):
         return self.location_name
 
 class College(models.Model):
     name = models.CharField(max_length=255)
     name_slug = models.SlugField()
+    def get_absolute_url(self):
+        return "/college/%s/" % self.slub
     def __unicode__(self):
         return self.name
 
 class Major(models.Model):
     name = models.CharField(max_length=255)
     name_slug = models.SlugField()
+    def get_absolute_url(self):
+        return "/major/%s/" % self.slub
     def __unicode__(self):
         return self.name
 

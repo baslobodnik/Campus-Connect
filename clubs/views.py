@@ -9,12 +9,12 @@ def homepage(request):
         'organization':organization,
     })
 def major(request):
-    major = Major.objects.order_by('major')
+    major = Major.objects.order_by('name')
     return render_to_response('major.html',{
         'major':major,
     })
 def college(request):
-    college = College.objects.order_by('college')
+    college = College.objects.order_by('name')
     return render_to_response('college.html',{
         'college':college,
     })

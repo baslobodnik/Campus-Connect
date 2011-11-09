@@ -1,3 +1,4 @@
 {% for object in college %}
-{{ object }}
+    <a href="{{college.get_absolute_url}}">
+        {{college}} </a>
 {% endfor %}

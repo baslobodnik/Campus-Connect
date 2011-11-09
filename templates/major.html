@@ -1,3 +1,4 @@
 {% for object in major %}
-{{ object }}
+    <a href="{{major.get_absolute_url}}">
+        {{major}} </a>
 {% endfor %}
