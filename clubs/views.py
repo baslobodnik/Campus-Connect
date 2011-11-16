@@ -28,12 +28,3 @@ def college_detail(request, college):
     return render_to_response('college_detail.html',{
         'clubs':clubs,
     })
-def location(request):
-    location = Location.objects.order_by('name')
-    return render_to_response('location.html',{
-        'location':location,
-    })
-def location_detail(request, location):
-    location = Organization.objects.filter()
-    return render_to_response('location_detail.html',{
-    })
