@@ -8,6 +8,14 @@ class Location(models.Model):
     def __unicode__(self):
         return self.location_name
 
+class Club(models.Model):
+    name = models.CharField(max_length=255)
+    name_slug = models.SlugField()
+    def get_absolute_url(self):
+        return "/club/%s/" % self.name_slug
+    def __unicode__(self):
+        return self.name
+
 class College(models.Model):
     name = models.CharField(max_length=255)
     name_slug = models.SlugField()
@@ -36,6 +44,7 @@ class Organization(models.Model):
     pub_date = models.DateTimeField('date published')
     pertaining_college = models.ManyToManyField(College)
     pertaining_major = models.ManyToManyField(Major)
+    pertaining_club = models.ManyToManyField(Club)
     advisor = models.ManyToManyField(Advisor)
     meeting_dates = models.TextField()
     location = models.ForeignKey(Location)

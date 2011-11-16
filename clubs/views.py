@@ -4,10 +4,8 @@ from campusconnect.clubs.models import Organization, Major, College
 from django.shortcuts import render_to_response
 
 def homepage(request):
-    organization = Organization.objects.order_by('club_title')
-    return render_to_response('homepage.html',{
-        'organization':organization,
-    })
+    return render_to_response('homepage.html',{})
+
 def major(request):
     major = Major.objects.order_by('name')
     return render_to_response('major.html',{
@@ -26,5 +24,15 @@ def college(request):
 def college_detail(request, college):
     clubs = Organization.objects.filter(pertaining_college__name_slug=college)
     return render_to_response('college_detail.html',{
+        'clubs':clubs,
+    })
+def club(request):
+    organization = Organization.objects.order_by('club_title')
+    return render_to_response('club.html',{
+        'organization':organization,
+    })
+def club_detail(request, detail):
+    clubs = Organization.objects.filter(pertaining_club__name_slug=club)
+    return render_to_response('club_detail.html',{
         'clubs':clubs,
     })
