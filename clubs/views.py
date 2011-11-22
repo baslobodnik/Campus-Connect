@@ -36,3 +36,12 @@ def club_detail(request, detail):
     return render_to_response('club_detail.html',{
         'clubs':clubs,
     })
+def question(request):
+    organization = Organization.objects.order_by('question')
+    return render_to_response('question.html',{
+        'question':question,
+    })
+def question_detail(request, detail):
+    question = Question.objects.order_by('name')
+    return render_to_response('question.html',{
+    })

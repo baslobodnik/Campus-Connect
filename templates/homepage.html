@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% block main %}
         <h1>Let's get started.</h1>
-        <p>This is why Campus Connect exists. This is how we help you and this is how to help yourself.</p>
+        <p>Campus Connect is a way for students at the University of Nebraska-Lincoln to become more involved on campus. Rather than searching for hours on the confusing interfaces of unl.edu or myred.unl.edu, simply search for available clubs and organizations below. Confused? Click the box below for frequently asked questions pertaining to this project.<b>Help us help you!</b></p>
         <p><a class="btn primary large">Learn more &raquo;</a></p>
 {% for object in organization %}
     <a href="{{object.get_absolute_url}}">

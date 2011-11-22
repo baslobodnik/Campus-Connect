@@ -14,6 +14,8 @@ urlpatterns = patterns('campusconnect.clubs.views',
     url(r'^college/(?P<college>[-\w]+)/$', 'college_detail', name='college_detail'),
     url(r'^club/$', 'club', name='club'),
     url(r'^club/(?P<club>[-\w]+)/$', 'club_detail', name='club_detail'),
+    url(r'^question/$', 'question', name='question'),
+    url(r'^question/(?P<question>[-\w]+)/$', 'question', name='question'),
     # url(r'^campusconnect/', include('campusconnect.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
