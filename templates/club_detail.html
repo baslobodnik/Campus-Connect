@@ -1,4 +1,31 @@
-{% for object in organization %}
-    <a href="{{object.get_absolute_url}}">
-        {{object}} </a>
-{% endfor %}
+{% extends "internal_base.html" %}
+
+{% block header %}
+           <h1>{{ club.name }}</h1>
+           <small>Look below for more detailed data about {{ club.name }}.</small>
+{% endblock %}
+
+
+{% block list %}
+<h2>{{ club.location }}</h2>
+<p>{{ club.location.location_name }}, {{ club.location.address }}</p>
+<p>{{ club.meeting_dates }}</p>
+<h3>{{ club.name }} Pertaining Majors<h3>
+<ul>{% for majors in club.major.all %}
+<li>{{ major.name }}</li>
+{% endfor %}</ul>
+<h3>{{ club.name }} Pertaining Colleges<h3>
+<ul>{% for colleges in club.college.all %}
+<li>{{ college.name }}</li>
+{% endfor %}</ul>
+<h3>Advisor(s)</h3>
+<!-- This is how you do a loop for a many to many field INSIDE your model. It's for THING in whatever your object name is DOT the field name DOT all -->
+<ul>{% for ad in club.advisor.all %}
+<li>{{ ad.name }}, {{ ad.title }}</li>
+{% endfor %}</ul>
+<!-- REMEMBER TO END YOUR LOOPS! -->
+<!-- And once you do end your loop, you can go right back to object.whatever notation -->
+<h3>Students must apply to become a member.</h3><p>{{ club.application }}</p>
+<h3>There is also an application fee.</h3><p>{{ club.fee }}</p>
+
+{% endblock %}

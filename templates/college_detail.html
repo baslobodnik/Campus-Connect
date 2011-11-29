@@ -1,4 +1,18 @@
-{% for object in clubs %}
-    <a href="{{object.get_absolute_url}}">
-        {{object}} </a>
-{% endfor %}
+{% extends "internal_base.html" %}
+
+{% block header %}
+<!-- Remember, get queries do not need a loop -- no for object in stuff -->
+           <h1>{{ clubs.college }}</h1>
+           <small>Look below for more majors pertaining to {{ college }}.</small>
+{% endblock %}
+
+
+{% block list %}
+<h2>Clubs for {{ college.name }}</h2>
+
+<!-- This is how you do a loop for a filter query -->
+<ul>{% for object in clubs %}
+<li><a href="{{object.get_absolute_url}}">{{ object.name }}</a></li>
+{% endfor %}</ul>
+
+{% endblock %}

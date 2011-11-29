@@ -1,4 +1,14 @@
+{% extends "internal_base.html" %}
+
+{% block header %}
+           <h1>Frequestly Asked Questions</h1>
+           <small>Read below for answers to typical questions about Campus Connect.</small>
+{% endblock %}
+
+
+{% block list %}
 {% for object in question %}
-    <a href="{{object.get_absolute_url}}">
-        {{object}} </a>
+    <a href="{{object.get_absolute_url}}">{{ question.organization }}</a>
 {% endfor %}
+
+{% endblock %}
