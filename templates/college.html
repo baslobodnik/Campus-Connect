@@ -2,14 +2,14 @@
 
 {% block header %}
            <h1>Search by Colleges</h1>
-           <small>Click on a college below to gain more information.</small>
+           <small>Click on a college below to find clubs pertaining to it.</small>
 {% endblock %}
 
 
 {% block list %}
 <h2>Colleges</h2>
-{% for object in college %}
-    <a href="{{object.get_absolute_url}}">{{ object.name }}</a>
-{% endfor %}
+<ul>{% for object in college %}
+    <li><a href="{{object.get_absolute_url}}">{{ object.name }}</a></li>
+{% endfor %}</ul>
 
 {% endblock %}

@@ -10,13 +10,13 @@
 <h2>{{ club.location }}</h2>
 <p>{{ club.location.location_name }}, {{ club.location.address }}</p>
 <p>{{ club.meeting_dates }}</p>
-<h3>{{ club.name }} Pertaining Majors<h3>
-<ul>{% for majors in club.major.all %}
-<li>{{ major.name }}</li>
+<h3>{{ club.name }} Pertaining Majors</h3>
+<ul>{% for majors in club.pertaining_major.all %}
+<li>{{ majors.name }}</li>
 {% endfor %}</ul>
-<h3>{{ club.name }} Pertaining Colleges<h3>
-<ul>{% for colleges in club.college.all %}
-<li>{{ college.name }}</li>
+<h3>{{ club.name }} Pertaining Colleges</h3>
+<ul>{% for colleges in club.pertaining_college.all %}
+<li>{{ colleges.name }}</li>
 {% endfor %}</ul>
 <h3>Advisor(s)</h3>
 <!-- This is how you do a loop for a many to many field INSIDE your model. It's for THING in whatever your object name is DOT the field name DOT all -->
@@ -25,7 +25,7 @@
 {% endfor %}</ul>
 <!-- REMEMBER TO END YOUR LOOPS! -->
 <!-- And once you do end your loop, you can go right back to object.whatever notation -->
-<h3>Students must apply to become a member.</h3><p>{{ club.application }}</p>
-<h3>There is also an application fee.</h3><p>{{ club.fee }}</p>
+<h5>Application Necessary? {{ club.application|yesno:"Yes,No,N/A" }}</h5>
+<h5>Required Fee? {{ club.fee|yesno:"Yes,No,N/A" }}</h5>
 
 {% endblock %}

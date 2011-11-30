@@ -8,8 +8,8 @@
 
 {% block list %}
 <h2>Clubs</h2>
-{% for object in organizations %}
-    <a href="{{object.get_absolute_url}}">{{ object.name }}</a>
-{% endfor %}
+<ul>{% for object in organizations %}
+    <li><a href="{{object.get_absolute_url}}">{{ object.name }}</a></li>
+{% endfor %}</ul>
 
 {% endblock %}

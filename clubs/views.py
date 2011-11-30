@@ -25,10 +25,12 @@ def college(request):
     return render_to_response('college.html',{
         'college':college,
     })
-def college_detail(request, college):
-    clubs = Organization.objects.filter(pertaining_college__name_slug=college)
+def college_detail(request, college_slug):
+    college = College.objects.get(name_slug=college_slug)
+    clubs = Organization.objects.filter(pertaining_college__name_slug=college_slug)
     return render_to_response('college_detail.html',{
         'clubs':clubs,
+        'college':college,
     })
 def club(request):
     organizations = Organization.objects.order_by('name')

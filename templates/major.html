@@ -8,8 +8,8 @@
 
 {% block list %}
 <h2>Majors</h2>
-{% for object in major %}
-    <a href="{{object.get_absolute_url}}">{{ object.name }}</a>
-{% endfor %}
+<ul>{% for object in major %}
+    <li><a href="{{object.get_absolute_url}}">{{ object.name }}</a></li>
+{% endfor %}</ul>
 
 {% endblock %}
