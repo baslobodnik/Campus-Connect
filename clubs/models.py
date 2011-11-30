@@ -2,7 +2,7 @@ from django.db import models
 
 class Location(models.Model):
     location_name = models.CharField(max_length=255)
-    address = models.CharField(max_length=255)
+    campus = models.CharField(max_length=255)
     def __unicode__(self):
         return self.location_name
 
