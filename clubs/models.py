@@ -51,3 +51,5 @@ class Question(models.Model):
     answer = models.TextField(blank=True, null=True)
     def __unicode__(self):
         return self.question
+    def get_absolute_url(self):
+        return "/question/%i/" % self.id

@@ -7,8 +7,8 @@
 
 
 {% block list %}
-{% for object in question %}
-    <a href="{{object.get_absolute_url}}">{{ question.organization }}</a>
-{% endfor %}
+<ul>{% for object in question %}
+    <li><a href="{{object.get_absolute_url}}">{{ object.question }}</a></li>
+{% endfor %}</ul>
 
 {% endblock %}

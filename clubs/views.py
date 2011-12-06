@@ -1,6 +1,6 @@
 # Create your views here.
 
-from campusconnect.clubs.models import Organization, Major, College
+from campusconnect.clubs.models import Organization, Major, College, Question
 from django.shortcuts import render_to_response
 
 def homepage(request):
@@ -43,11 +43,12 @@ def club_detail(request, club):
         'club':club,
     })
 def question(request):
-    organization = Organization.objects.order_by('question')
+    question = Question.objects.all()
     return render_to_response('question.html',{
         'question':question,
     })
 def question_detail(request, question):
-    question = Question.objects.order_by('name')
-    return render_to_response('question.html',{
+    question = Question.objects.get(id=question)
+    return render_to_response('question_detail.html',{
+        'question':question,
     })
